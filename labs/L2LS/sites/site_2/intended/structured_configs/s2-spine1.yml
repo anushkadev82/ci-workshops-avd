@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -114,6 +120,15 @@ local_users:
   sha512_password: $6$arista$HK.go9L6LfjbOCeXGd9ZSRr1HESFQfyPFS/mQEGwWl85CKNbvV/F4Y9VNNZFa9UQ1lFoSKkb4iqtWGQAfuTDa/
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8ZjEC1hVe90eD7Aly5nN3nNJ+SmCzLlREzTWNX1IvR/cxqX0BkumKoeRdoBuZZik4yyC6jCSvzqnFHK6vmj/Qd8oOrvg4MmSbK0puc+GqAMgsY0w+fAk/Z7xsRAv+WM2KKnFMkLL0vQBBDq7trct8BwPP0X+Fkjw0BwOBDfqea/B/AyKZ8z8xkbSTSK6Tfk0tYGOIYW+uol6JS91sZRZQsYvM2DkYlgvqN3z6bI7LbXQNxMcnu18qDHnvurMQ31D6xnDa0RqEqKYxQE3Ipl4jqQ2+Ztk8wlTNiXSdNs7ErzUw0ymgefRPO9j7RgeHQBHUSjOxODVrs0vfAaB63NxD
     arista@automation-atd-sydney-40-0aa45f33-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
